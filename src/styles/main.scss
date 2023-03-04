@@ -1,0 +1,48 @@
+@import "vars";
+@import "setting";
+
+.slider {
+    padding: 0 80px;
+
+    &-prev {
+        position: absolute;
+        left: 40px;
+        top: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &-next {
+        position: absolute;
+        right: 40px;
+        top: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.swiper-button-disabled {
+    display: none;
+}
