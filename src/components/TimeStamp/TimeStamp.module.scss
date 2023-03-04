@@ -1,0 +1,23 @@
+.container {
+    position: absolute;
+    display: flex;
+    right: -26rem;
+    top: -2rem;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 200px;
+    line-height: 160px;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    &--violet {
+        color: var(--light-violet-color);
+        margin-right: 50px;
+    }
+
+    &--purple {
+        color: var(--light-purple-color);
+    }
+}

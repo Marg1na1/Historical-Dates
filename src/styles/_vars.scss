@@ -1,0 +1,16 @@
+:root {
+    // base
+    --content-width: 1470px;
+    --container-offset: 15px;
+    --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+    // colors
+    --light-color: #E5E5E5;
+    --light-violet-color: #5D5FEF;
+    --light-purple-color: #EF5DA8;
+    --black-blue-color: #42567A;
+    --light-gray-color: #e2e5ec;
+    --gray-color: #d0d4e0;
+    --dark-gray-color: #9398a8;
+    --ultramarine-blue-color: #456ded;
+}
