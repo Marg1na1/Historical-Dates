@@ -12,7 +12,6 @@ const Dates: FC = () => {
 
     useEffect(() => {
         setRotateAngle(120 + (period * -60))
-        console.log(rotateAngle)
     }, [period])
 
     const arc = 2 * Math.PI * (1 / slides.length);
@@ -72,7 +71,6 @@ const Dates: FC = () => {
                 </ul>
             </div>
             <TimeStamp {...slides[period]} />
-            <h1 className={style['data-period']}>{ }</h1>
             <div className={style['progress']}>
                 <p>0{period + 1} / 0{slides.length}</p>
                 <div className={style['progress__btns']}>

@@ -35,6 +35,7 @@ const TimeStamp: FC<EventsModel> = ({ items }) => {
         <div className={style['container']}>
             <h1 className={clsx(style['title'], style['title--violet'])}>{timeStamp.min}</h1>
             <h1 className={clsx(style['title'], style['title--purple'])}>{timeStamp.max}</h1>
+            <div className={style['separators']}></div>
         </div>
     );
 }

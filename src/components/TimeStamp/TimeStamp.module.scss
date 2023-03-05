@@ -1,8 +1,10 @@
 .container {
     position: absolute;
     display: flex;
+    justify-content: center;
     top: 25rem;
-    left: 17rem;
+    left: 0;
+    right: 0;
     z-index: -10;
 }
 
@@ -13,7 +15,6 @@
     text-align: center;
     letter-spacing: -0.02em;
 
-
     &--violet {
         color: var(--light-violet-color);
         margin-right: 50px;
@@ -21,5 +22,29 @@
 
     &--purple {
         color: var(--light-purple-color);
+    }
+}
+
+.separators {
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100vw;
+        width: 1px;
+        background-color: var(--gray-color);
+        left: calc(50% - 1px);
+        top: -100vh;
+        z-index: -10;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 1px;
+        background-color: var(--gray-color);
+        top: calc(50% - 1px);
+        left: -50%;
+        z-index: -10;
     }
 }
