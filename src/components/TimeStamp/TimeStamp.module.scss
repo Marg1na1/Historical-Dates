@@ -1,8 +1,9 @@
 .container {
     position: absolute;
     display: flex;
-    right: -26rem;
-    top: -2rem;
+    top: 25rem;
+    left: 17rem;
+    z-index: -10;
 }
 
 .title {
@@ -11,6 +12,7 @@
     line-height: 160px;
     text-align: center;
     letter-spacing: -0.02em;
+
 
     &--violet {
         color: var(--light-violet-color);

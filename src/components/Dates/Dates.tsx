@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { slides } from '../../data/slider.data';
 import { Slider } from '../Slider';
 import { TimeStamp } from '../TimeStamp';
@@ -8,6 +8,12 @@ import style from './Dates.module.scss';
 const Dates: FC = () => {
 
     const [period, setPeriod] = useState(0)
+    const [rotateAngle, setRotateAngle] = useState(120);
+
+    useEffect(() => {
+        setRotateAngle(120 + (period * -60))
+        console.log(rotateAngle)
+    }, [period])
 
     const arc = 2 * Math.PI * (1 / slides.length);
 
@@ -19,9 +25,15 @@ const Dates: FC = () => {
         const x = radius * Math.cos(angle);
         const y = radius * Math.sin(angle);
 
+        const liStyle = {
+            right: x + 22 + '%',
+            bottom: y + 22 + '%',
+            transform: `rotate(${-rotateAngle}deg)`
+        }
+
         return <li
             key={i}
-            style={{ right: x + 22 + '%', bottom: y + 22 + '%' }}
+            style={liStyle}
             className={clsx(style['menu__item'], {
                 [style['menu__item--active']]: period === i
             })}
@@ -47,16 +59,20 @@ const Dates: FC = () => {
         }
     }
 
+    const styles = {
+        transform: `rotate(${rotateAngle}deg)`
+    };
+
     return (
         <section className={style['root']}>
             <h1 className={style['title']}>Исторические даты</h1>
             <div className={style['circle']}>
-                <ul className={style['container']}>
+                <ul className={style['container']} style={styles}>
                     {renderMenu}
-                    <TimeStamp {...slides[period]} />
                 </ul>
             </div>
-            <h1 className={style['data-period']}>{ }</h1> 
+            <TimeStamp {...slides[period]} />
+            <h1 className={style['data-period']}>{ }</h1>
             <div className={style['progress']}>
                 <p>0{period + 1} / 0{slides.length}</p>
                 <div className={style['progress__btns']}>
