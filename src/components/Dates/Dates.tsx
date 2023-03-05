@@ -12,7 +12,6 @@ const Dates: FC = () => {
 
     useEffect(() => {
         setRotateAngle(120 + (period * -60))
-        console.log(rotateAngle)
     }, [period])
 
     const arc = 2 * Math.PI * (1 / slides.length);
